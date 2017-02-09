@@ -13,6 +13,7 @@ import org.json.JSONObject;
 import android.os.Bundle;
 
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.messaging.RemoteMessage;
 import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.Map;
@@ -69,6 +70,23 @@ public class FCMPlugin extends CordovaPlugin {
 						if(lastPush != null) FCMPlugin.sendPushPayload( lastPush );
 						lastPush = null;
 						callbackContext.success();
+					}
+				});
+			}
+			// SENDING MESSAGE TO THE SERVER //
+			else if (action.equals("sendUpstreamMessage")) {
+				cordova.getThreadPool().execute(new Runnable() {
+					public void run() {
+						try{
+							FirebaseMessaging.getInstance()
+								.send(new RemoteMessage.Builder(args.getString(1)/*SENDER_ID*/ + "@" + args.getString(2)/*"server address"*/)
+								.setMessageId(Integer.toString(args.getString(3)/*message id*/)
+								.addData("message", args.getString(0)/*message*/)
+								.build());
+							callbackContext.success();
+						}catch(Exception e){
+							callbackContext.error(e.getMessage());
+						}
 					}
 				});
 			}
