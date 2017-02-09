@@ -79,7 +79,7 @@ public class FCMPlugin extends CordovaPlugin {
 					public void run() {
 						try{
 							FirebaseMessaging.getInstance()
-								.send(new RemoteMessage.Builder(args.getString(1) + "@" + args.getString(2)
+								.send(new RemoteMessage.Builder(args.getString(1) + "@" + args.getString(2))
 								.setMessageId(args.getString(3))
 								.addData("message", args.getString(0))
 								.build());
