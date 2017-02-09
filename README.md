@@ -73,6 +73,14 @@ FCMPlugin.subscribeToTopic('topicExample');
 FCMPlugin.unsubscribeFromTopic('topicExample');
 ```
 
+####Send upstream message
+
+```javascript
+//FCMPlugin.sendUpstreamMessage( message, SENDER_ID, serverAddress, messageID, successCallback(msg), errorCallback(err) );
+//Send a message to the server
+FCMPlugin.sendUpstreamMessage('my message', '78462735', 'my.address.com', '2');
+```
+
 ####Receiving push notification data
 
 ```javascript
