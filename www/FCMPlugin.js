@@ -25,7 +25,10 @@ FCMPlugin.prototype.onTokenRefresh = function( callback ){
 FCMPlugin.prototype.getToken = function( success, error ){
 	exec(success, error, "FCMPlugin", 'getToken', []);
 }
-
+// SEND MESSAGE TO SERVER //
+FCMPlugin.prototype.sendUpstreamMessage = function( message, senderID, serverAddress, messageID, success, error ){
+	exec(success, error, "FCMPlugin", 'sendUpstreamMessage', [message, senderID, serverAddress, messageID]);
+}
 // DEFAULT NOTIFICATION CALLBACK //
 FCMPlugin.prototype.onNotificationReceived = function(payload){
 	console.log("Received push notification")
