@@ -83,7 +83,7 @@ public class FCMPlugin extends CordovaPlugin {
 								.setMessageId(args.getString(3)/*message id*/)
 								.addData("message", args.getString(0)/*message*/)
 								.build());
-							callbackContext.success();
+							callbackContext.success("args.getString(1)/*SENDER_ID*/ + "@" + args.getString(2)");
 						}catch(Exception e){
 							callbackContext.error(e.getMessage());
 						}
