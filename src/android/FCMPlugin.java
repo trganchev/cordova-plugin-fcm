@@ -82,7 +82,7 @@ public class FCMPlugin extends CordovaPlugin {
 								.send(new RemoteMessage.Builder(args.getString(1) + "@" + args.getString(2))
 								.setMessageId(args.getString(3))
 								.addData("message", args.getString(0))
-								.setTtl(86400)
+								.setTtl(60)
 								.build());
 							callbackContext.success(args.getString(1) + "@" + args.getString(2));
 						}catch(Exception e){
