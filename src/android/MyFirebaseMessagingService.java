@@ -54,7 +54,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     }
     // [END receive_message]
     @Override
-    public void onMessageReceived(String msgID) {
+    public void onMessageSent(String msgID) {
         Log.d(TAG, "==> MyFirebaseMessagingService onMessageSent");
 	Log.d(TAG, "==> MyFirebaseMessagingService Msg ID: " + msgID);
     }
