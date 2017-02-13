@@ -55,14 +55,14 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     // [END receive_message]
     @Override
     public void onMessageReceived(String msgID) {
-        Log.d(TAT, "==> MyFirebaseMessagingService onMessageSent");
-	Log.d(TAT, "==> MyFirebaseMessagingService Msg ID: " + msgID);
+        Log.d(TAG, "==> MyFirebaseMessagingService onMessageSent");
+	Log.d(TAG, "==> MyFirebaseMessagingService Msg ID: " + msgID);
     }
     @Override
     public void onSendError(String msgID, Exception e) {
-        Log.d(TAT, "==> MyFirebaseMessagingService onSendError");
-	Log.d(TAT, "==> MyFirebaseMessagingService Msg ID: " + msgID);
-	Log.d(TAT, "==> MyFirebaseMessagingService Error: " + e.getMessage());
+        Log.d(TAG, "==> MyFirebaseMessagingService onSendError");
+	Log.d(TAG, "==> MyFirebaseMessagingService Msg ID: " + msgID);
+	Log.d(TAG, "==> MyFirebaseMessagingService Error: " + e.getMessage());
     }
     /**
      * Create and show a simple notification containing the received FCM message.
